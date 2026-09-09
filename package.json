@@ -1,0 +1,21 @@
+{
+  "name": "proj",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "eleventy",
+    "dev": "eleventy --serve"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@11ty/eleventy": "^3.1.6"
+  },
+  "dependencies": {
+    "gray-matter": "^4.0.3",
+    "markdown-it": "^15.0.1"
+  },
+  "type": "module"
+}

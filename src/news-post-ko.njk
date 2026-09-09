@@ -1,0 +1,64 @@
+---
+pagination:
+  data: news
+  size: 1
+  alias: post
+permalink: "/news/{{ post.slug }}/"
+layout: news-base.njk
+lang: ko
+ogType: article
+eleventyComputed:
+  pageTitle: "{{ post.ko.title }} | 청담채 소식"
+  pageDesc: "{{ post.ko.summary }}"
+  heading: "{{ post.ko.title }}"
+  subheading: "{{ post.date | dateKo }}"
+  ogImage: "{{ post.cover }}"
+  altKo: "/news/{{ post.slug }}/"
+  altEn: "/en/news/{{ post.slug }}/"
+---
+<article class="news-wrap article">
+  {% if post.cover %}
+    <img class="cover" src="{{ post.cover }}" alt="{{ post.coverAlt or post.ko.title }}" loading="eager" decoding="async">
+  {% endif %}
+
+  <div class="article-body">
+    {{ post.ko.bodyHtml | safe }}
+  </div>
+
+  {% if post.embed %}
+    {% if post.embed.kind == "link" %}
+      <p style="margin-top:32px;"><a href="{{ post.embed.src }}" target="_blank" rel="noopener">영상 보러 가기 →</a></p>
+    {% else %}
+      <div class="video-embed">
+        <iframe src="{{ post.embed.src }}" title="{{ post.ko.title }}" loading="lazy"
+                allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
+      </div>
+    {% endif %}
+  {% endif %}
+
+  <div class="article-foot">
+    <a href="/news/">← 소식 전체 보기</a>
+    <a href="{{ site.booking }}" target="_blank" rel="noopener">자리 예약하기 →</a>
+  </div>
+</article>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "NewsArticle",
+  "headline": {{ post.ko.title | dump | safe }},
+  "description": {{ post.ko.summary | dump | safe }},
+  "datePublished": "{{ post.date | dateIso }}",
+  "inLanguage": "ko",
+  "mainEntityOfPage": "{{ site.domain }}{{ page.url }}",
+  {% if post.cover %}"image": "{{ site.domain }}{{ post.cover }}",{% endif %}
+  "author": {"@type": "Organization", "name": "청담채 CheongDamChae"},
+  "publisher": {
+    "@type": "Organization",
+    "name": "청담채 CheongDamChae",
+    "logo": {"@type": "ImageObject", "url": "{{ site.domain }}/images/logo.png"}
+  },
+  "about": {"@type": "Restaurant", "@id": "{{ site.domain }}/#restaurant"}
+}
+</script>

@@ -1,0 +1,70 @@
+---
+pagination:
+  data: news
+  size: 1
+  alias: post
+permalink: "/en/news/{{ post.slug }}/"
+layout: news-base.njk
+lang: en
+ogType: article
+eleventyComputed:
+  pageTitle: "{{ post.en.title }} | CheongDamChae News"
+  pageDesc: "{{ post.en.summary }}"
+  heading: "{{ post.en.title }}"
+  subheading: "{{ post.date | dateEn }}"
+  ogImage: "{{ post.cover }}"
+  altKo: "/news/{{ post.slug }}/"
+  altEn: "/en/news/{{ post.slug }}/"
+---
+<article class="news-wrap article">
+  {% if not post.en.translated %}
+    <p style="background:var(--cream-100); padding:14px 18px; border-radius:8px; font-size:0.92rem; color:var(--ink-700); margin-bottom:28px;">
+      An English version of this post is not available yet — the Korean text is shown below.
+    </p>
+  {% endif %}
+
+  {% if post.cover %}
+    <img class="cover" src="{{ post.cover }}" alt="{{ post.coverAlt or post.en.title }}" loading="eager" decoding="async">
+  {% endif %}
+
+  <div class="article-body">
+    {{ post.en.bodyHtml | safe }}
+  </div>
+
+  {% if post.embed %}
+    {% if post.embed.kind == "link" %}
+      <p style="margin-top:32px;"><a href="{{ post.embed.src }}" target="_blank" rel="noopener">Watch the video →</a></p>
+    {% else %}
+      <div class="video-embed">
+        <iframe src="{{ post.embed.src }}" title="{{ post.en.title }}" loading="lazy"
+                allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
+      </div>
+    {% endif %}
+  {% endif %}
+
+  <div class="article-foot">
+    <a href="/en/news/">← All news</a>
+    <a href="{{ site.booking }}" target="_blank" rel="noopener">Book a table →</a>
+  </div>
+</article>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "NewsArticle",
+  "headline": {{ post.en.title | dump | safe }},
+  "description": {{ post.en.summary | dump | safe }},
+  "datePublished": "{{ post.date | dateIso }}",
+  "inLanguage": "{{ 'en' if post.en.translated else 'ko' }}",
+  "mainEntityOfPage": "{{ site.domain }}{{ page.url }}",
+  {% if post.cover %}"image": "{{ site.domain }}{{ post.cover }}",{% endif %}
+  "author": {"@type": "Organization", "name": "CheongDamChae"},
+  "publisher": {
+    "@type": "Organization",
+    "name": "CheongDamChae",
+    "logo": {"@type": "ImageObject", "url": "{{ site.domain }}/images/logo.png"}
+  },
+  "about": {"@type": "Restaurant", "@id": "{{ site.domain }}/#restaurant"}
+}
+</script>
