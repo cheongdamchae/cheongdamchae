@@ -3,7 +3,7 @@ pagination:
   data: news
   size: 1
   alias: post
-permalink: "/news/{{ post.slug }}/"
+permalink: "/ko/news/{{ post.slug }}/"
 layout: news-base.njk
 lang: ko
 ogType: article
@@ -13,8 +13,8 @@ eleventyComputed:
   heading: "{{ post.ko.title }}"
   subheading: "{{ post.date | dateKo }}"
   ogImage: "{{ post.cover }}"
-  altKo: "/news/{{ post.slug }}/"
-  altEn: "/en/news/{{ post.slug }}/"
+  altKo: "/ko/news/{{ post.slug }}/"
+  altEn: "/news/{{ post.slug }}/"
 ---
 <article class="news-wrap article">
   {% if post.cover %}
@@ -38,7 +38,7 @@ eleventyComputed:
   {% endif %}
 
   <div class="article-foot">
-    <a href="/news/">← 소식 전체 보기</a>
+    <a href="/ko/news/">← 소식 전체 보기</a>
     <a href="{{ site.booking }}" target="_blank" rel="noopener">자리 예약하기 →</a>
   </div>
 </article>

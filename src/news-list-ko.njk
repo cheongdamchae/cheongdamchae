@@ -1,13 +1,13 @@
 ---
-permalink: "/news/"
+permalink: "/ko/news/"
 layout: news-base.njk
 lang: ko
 heading: "청담채 소식"
 subheading: "새 메뉴, 재료 이야기, 매장 소식을 전해드립니다."
 pageTitle: "청담채 소식 | Telok Ayer 한식당 CheongDamChae"
 pageDesc: "싱가포르 텔록아이어 한식당 청담채의 새 메뉴와 재료 이야기, 매장 소식."
-altKo: "/news/"
-altEn: "/en/news/"
+altKo: "/ko/news/"
+altEn: "/news/"
 ---
 <div class="news-wrap news-list">
   {% if news.length == 0 %}
@@ -17,12 +17,12 @@ altEn: "/en/news/"
   <article class="news-card">
     <div class="thumb">
       {% if post.cover %}
-        <a href="/news/{{ post.slug }}/"><img src="{{ post.cover }}" alt="{{ post.coverAlt or post.ko.title }}" loading="lazy" decoding="async"></a>
+        <a href="/ko/news/{{ post.slug }}/"><img src="{{ post.cover }}" alt="{{ post.coverAlt or post.ko.title }}" loading="lazy" decoding="async"></a>
       {% endif %}
     </div>
     <div>
       <time datetime="{{ post.date | dateIso }}">{{ post.date | dateKo }}</time>
-      <h2><a href="/news/{{ post.slug }}/">{{ post.ko.title }}</a></h2>
+      <h2><a href="/ko/news/{{ post.slug }}/">{{ post.ko.title }}</a></h2>
       <p>{{ post.ko.summary }}</p>
     </div>
   </article>

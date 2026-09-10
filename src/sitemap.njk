@@ -8,6 +8,14 @@ eleventyExcludeFromCollections: true
     <loc>{{ site.domain }}/</loc>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="{{ site.domain }}/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="{{ site.domain }}/ko/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="{{ site.domain }}/"/>
+  </url>
+  <url>
+    <loc>{{ site.domain }}/ko/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
   </url>
   <url>
     <loc>{{ site.domain }}/news/</loc>
@@ -15,19 +23,19 @@ eleventyExcludeFromCollections: true
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>{{ site.domain }}/en/news/</loc>
+    <loc>{{ site.domain }}/ko/news/</loc>
     <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
   </url>
 {%- for post in news %}
   <url>
     <loc>{{ site.domain }}/news/{{ post.slug }}/</loc>
     <lastmod>{{ post.date | dateIso }}</lastmod>
-    <xhtml:link rel="alternate" hreflang="ko" href="{{ site.domain }}/news/{{ post.slug }}/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="{{ site.domain }}/en/news/{{ post.slug }}/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="{{ site.domain }}/news/{{ post.slug }}/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="{{ site.domain }}/ko/news/{{ post.slug }}/"/>
   </url>
   <url>
-    <loc>{{ site.domain }}/en/news/{{ post.slug }}/</loc>
+    <loc>{{ site.domain }}/ko/news/{{ post.slug }}/</loc>
     <lastmod>{{ post.date | dateIso }}</lastmod>
   </url>
 {%- endfor %}

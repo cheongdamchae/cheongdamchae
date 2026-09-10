@@ -3,7 +3,7 @@ pagination:
   data: news
   size: 1
   alias: post
-permalink: "/en/news/{{ post.slug }}/"
+permalink: "/news/{{ post.slug }}/"
 layout: news-base.njk
 lang: en
 ogType: article
@@ -13,8 +13,8 @@ eleventyComputed:
   heading: "{{ post.en.title }}"
   subheading: "{{ post.date | dateEn }}"
   ogImage: "{{ post.cover }}"
-  altKo: "/news/{{ post.slug }}/"
-  altEn: "/en/news/{{ post.slug }}/"
+  altKo: "/ko/news/{{ post.slug }}/"
+  altEn: "/news/{{ post.slug }}/"
 ---
 <article class="news-wrap article">
   {% if not post.en.translated %}
@@ -44,7 +44,7 @@ eleventyComputed:
   {% endif %}
 
   <div class="article-foot">
-    <a href="/en/news/">← All news</a>
+    <a href="/news/">← All news</a>
     <a href="{{ site.booking }}" target="_blank" rel="noopener">Book a table →</a>
   </div>
 </article>

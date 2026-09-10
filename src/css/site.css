@@ -410,3 +410,10 @@
 @media (max-width:860px){
   .home-news-grid{grid-template-columns:1fr; gap:32px;}
 }
+
+/* 헤더 언어 전환 버튼 */
+.nav-lang{margin-left:auto; margin-right:16px;}
+@media (max-width:860px){
+  .nav-lang{margin-right:12px;}
+  .nav-lang a{padding:4px 10px; font-size:0.78rem;}
+}

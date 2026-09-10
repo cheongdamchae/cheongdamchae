@@ -1,45 +1,57 @@
+---
+pagination:
+  data: copy.langs
+  size: 1
+  alias: lang
+permalink: "{{ copy.home[lang] }}"
+eleventyExcludeFromCollections: true
+---
+{% set other = "ko" if lang == "en" else "en" %}
+{% set S = copy.sections %}
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="{{ lang }}">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>청담채 CheongDamChae | Telok Ayer 한식 삼겹살 맛집 — 냉삼·쭈삼·파삼</title>
-<meta name="description" content="싱가포르 텔록아이어 한식당 청담채. 듀록 품종 삼겹살을 4.5mm 두께로 구워내는 냉삼, 매콤한 쭈삼, 무쇠파절임삼겹살까지. 매일 11:00–23:30 영업, 8080 5181.">
+<title>{{ copy.meta.title[lang] }}</title>
+<meta name="description" content="{{ copy.meta.description[lang] }}">
 <meta name="robots" content="index, follow">
-<link rel="canonical" href="https://cheongdamchaesg.com/">
+<link rel="canonical" href="{{ site.domain }}{{ copy.home[lang] }}">
+<link rel="alternate" hreflang="en" href="{{ site.domain }}/">
+<link rel="alternate" hreflang="ko" href="{{ site.domain }}/ko/">
+<link rel="alternate" hreflang="x-default" href="{{ site.domain }}/">
 <meta property="og:type" content="restaurant.restaurant">
-<meta property="og:title" content="청담채 CheongDamChae | Telok Ayer 한식 삼겹살 맛집">
-<meta property="og:description" content="듀록 품종 삼겹살 냉삼·쭈삼·파삼, 정성 가득한 밑반찬. 텔록아이어에서 만나는 정직한 한식 바베큐.">
-<meta property="og:locale" content="ko_KR">
-<meta property="og:site_name" content="청담채 CheongDamChae">
-<meta property="og:url" content="https://cheongdamchaesg.com/">
-<meta property="og:image" content="https://cheongdamchaesg.com/images/og-cover.jpg">
+<meta property="og:title" content="{{ copy.meta.ogTitle[lang] }}">
+<meta property="og:description" content="{{ copy.meta.ogDescription[lang] }}">
+<meta property="og:locale" content="{{ copy.meta.locale[lang] }}">
+<meta property="og:site_name" content="CheongDamChae 청담채">
+<meta property="og:url" content="{{ site.domain }}{{ copy.home[lang] }}">
+<meta property="og:image" content="{{ site.domain }}/images/og-cover.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="청담채 파삼 — 무쇠 철판에 구운 삼겹살과 파절임">
+<meta property="og:image:alt" content="{{ copy.meta.ogImageAlt[lang] }}">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://cheongdamchaesg.com/images/og-cover.jpg">
+<meta name="twitter:image" content="{{ site.domain }}/images/og-cover.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=IBM+Plex+Sans+KR:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/site.css">
+{% if lang == "en" %}
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "Restaurant",
-  "@id": "https://cheongdamchaesg.com/#restaurant",
+  "@id": "{{ site.domain }}/#restaurant",
   "name": "CheongDamChae 청담채",
-  "url": "https://cheongdamchaesg.com/",
+  "url": "{{ site.domain }}/",
   "image": [
-    "https://cheongdamchaesg.com/images/space-storefront.webp",
-    "https://cheongdamchaesg.com/images/pasam.webp",
-    "https://cheongdamchaesg.com/images/naengsam.webp"
+    "{{ site.domain }}/images/space-storefront.webp",
+    "{{ site.domain }}/images/pasam.webp",
+    "{{ site.domain }}/images/naengsam.webp"
   ],
-  "logo": "https://cheongdamchaesg.com/images/logo.png",
-  "description": "싱가포르 텔록아이어의 한식 삼겹살 전문점. 듀록 품종 삼겹살을 4.5mm 두께로 구워내는 냉삼, 매콤한 쭈삼, 무쇠파절임삼겹살 파삼.",
-  "servesCuisine": [
-    "Korean",
-    "Korean BBQ"
-  ],
+  "logo": "{{ site.domain }}/images/logo.png",
+  "description": {{ copy.meta.ldDescription.en | dump | safe }},
+  "servesCuisine": ["Korean", "Korean BBQ"],
   "priceRange": "$$",
   "currenciesAccepted": "SGD",
   "telephone": "+65-8080-5181",
@@ -50,262 +62,116 @@
     "postalCode": "068592",
     "addressCountry": "SG"
   },
-  "geo": {
-    "@type": "GeoCoordinates",
-    "latitude": 1.2811983,
-    "longitude": 103.84802
-  },
+  "geo": {"@type": "GeoCoordinates", "latitude": 1.2811983, "longitude": 103.84802},
   "hasMap": "https://www.google.com/maps/search/?api=1&query=CheongDamChae&query_place_id=ChIJoZsYEQAZ2jERGCh9m8C_Rvc",
   "openingHoursSpecification": {
     "@type": "OpeningHoursSpecification",
-    "dayOfWeek": [
-      "Monday",
-      "Tuesday",
-      "Wednesday",
-      "Thursday",
-      "Friday",
-      "Saturday",
-      "Sunday"
-    ],
+    "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
     "opens": "11:00",
     "closes": "23:30"
   },
-  "sameAs": [
-    "https://www.instagram.com/cheongdamchae_sg/"
-  ],
+  "sameAs": ["{{ site.instagram }}"],
   "acceptsReservations": "True",
   "potentialAction": {
     "@type": "ReserveAction",
     "target": {
       "@type": "EntryPoint",
-      "urlTemplate": "https://myneon.me/?m=booking&sno=1454",
-      "actionPlatform": [
-        "http://schema.org/DesktopWebPlatform",
-        "http://schema.org/MobileWebPlatform"
-      ]
+      "urlTemplate": "{{ site.booking }}",
+      "actionPlatform": ["http://schema.org/DesktopWebPlatform", "http://schema.org/MobileWebPlatform"]
     }
   },
   "hasMenu": {
     "@type": "Menu",
-    "name": "청담채 메뉴",
-    "inLanguage": "ko",
+    "name": "CheongDamChae Menu",
+    "inLanguage": "en",
     "hasMenuSection": [
       {
         "@type": "MenuSection",
-        "name": "대표메뉴 Signature",
+        "name": "Signature",
         "hasMenuItem": [
-          {
-            "@type": "MenuItem",
-            "name": "냉삼 Naengsam (Frozen Pork Belly)",
-            "offers": {
-              "@type": "Offer",
-              "price": "68.80",
-              "priceCurrency": "SGD",
-              "description": "1kg"
-            }
-          },
-          {
-            "@type": "MenuItem",
-            "name": "냉삼 Naengsam (Frozen Pork Belly)",
-            "offers": {
-              "@type": "Offer",
-              "price": "48.80",
-              "priceCurrency": "SGD",
-              "description": "600g"
-            }
-          },
-          {
-            "@type": "MenuItem",
-            "name": "쭈삼 Jusam (Spicy Baby Octopus & Pork Belly)",
-            "offers": {
-              "@type": "Offer",
-              "price": "48.80",
-              "priceCurrency": "SGD"
-            }
-          },
-          {
-            "@type": "MenuItem",
-            "name": "파삼 무쇠파절임삼겹살 (Cast Iron Grilled Pork Belly with Spring Onion)",
-            "offers": {
-              "@type": "Offer",
-              "price": "48.80",
-              "priceCurrency": "SGD",
-              "description": "240g"
-            }
-          }
+{% set first = true %}{% for d in copy.signature %}{% for p in d.prices %}{% if not first %},{% endif %}{% set first = false %}
+          {"@type": "MenuItem", "name": {{ (d.name.en + " " + d.name.ko) | dump | safe }}, "offers": {"@type": "Offer", "price": "{{ p.amt | replace("SGD ", "") | replace("++", "") }}", "priceCurrency": "SGD", "description": {{ p.label.en | dump | safe }}}}
+{%- endfor %}{% endfor %}
         ]
       },
       {
         "@type": "MenuSection",
-        "name": "탕·국 Soups",
+        "name": "From The Kitchen",
         "hasMenuItem": [
-          {
-            "@type": "MenuItem",
-            "name": "꼬리곰탕 Ox Tail Soup",
-            "offers": {
-              "@type": "Offer",
-              "price": "28.80",
-              "priceCurrency": "SGD"
-            }
-          },
-          {
-            "@type": "MenuItem",
-            "name": "우대갈비탕 Big Bone Beef Soup",
-            "offers": {
-              "@type": "Offer",
-              "price": "24.80",
-              "priceCurrency": "SGD"
-            }
-          },
-          {
-            "@type": "MenuItem",
-            "name": "한국식 바쿠테 Korean Style Bakute",
-            "offers": {
-              "@type": "Offer",
-              "price": "21.80",
-              "priceCurrency": "SGD"
-            }
-          },
-          {
-            "@type": "MenuItem",
-            "name": "콩나물 북어 해장국 Dried Fish Clear Soup"
-          }
+{% for d in copy.more %}{% if not loop.first %},{% endif %}
+          {"@type": "MenuItem", "name": {{ (d.name.en + " " + d.name.ko) | dump | safe }}{% if d.price %}, "offers": {"@type": "Offer", "price": "{{ d.price | replace("SGD ", "") | replace("++", "") }}", "priceCurrency": "SGD"}{% endif %}}
+{%- endfor %}
         ]
       },
       {
         "@type": "MenuSection",
-        "name": "찌개 Stews",
+        "name": "Hot Pot Rice",
         "hasMenuItem": [
-          {
-            "@type": "MenuItem",
-            "name": "고추장찌개 Gochujang Stew",
-            "offers": {
-              "@type": "Offer",
-              "price": "17.80",
-              "priceCurrency": "SGD"
-            }
-          },
-          {
-            "@type": "MenuItem",
-            "name": "김치찌개 Kimchi Stew"
-          },
-          {
-            "@type": "MenuItem",
-            "name": "순두부찌개 Sundubu Stew"
-          },
-          {
-            "@type": "MenuItem",
-            "name": "된장찌개 Doenjang Stew"
-          }
-        ]
-      },
-      {
-        "@type": "MenuSection",
-        "name": "식사 Rice",
-        "hasMenuItem": [
-          {
-            "@type": "MenuItem",
-            "name": "꼬막비빔밥 Cockle Mixed Rice",
-            "offers": {
-              "@type": "Offer",
-              "price": "19.80",
-              "priceCurrency": "SGD"
-            }
-          }
-        ]
-      },
-      {
-        "@type": "MenuSection",
-        "name": "솥밥 Hot Pot Rice",
-        "hasMenuItem": [
-          {
-            "@type": "MenuItem",
-            "name": "갈비살 솥밥 Prime Rib Hot Pot Rice"
-          },
-          {
-            "@type": "MenuItem",
-            "name": "LA갈비 솥밥 LA Galbi Hot Pot Rice"
-          },
-          {
-            "@type": "MenuItem",
-            "name": "민물장어 솥밥 Freshwater Eel Hot Pot Rice"
-          },
-          {
-            "@type": "MenuItem",
-            "name": "명란 솥밥 Cod Roe Hot Pot Rice"
-          },
-          {
-            "@type": "MenuItem",
-            "name": "삼겹구이 솥밥 Duroc Pork Belly Hot Pot Rice"
-          },
-          {
-            "@type": "MenuItem",
-            "name": "가지 소고기 솥밥 Eggplant & Beef Hot Pot Rice"
-          }
+{% for d in copy.sotbap %}{% if not loop.first %},{% endif %}
+          {"@type": "MenuItem", "name": {{ (d.name.en + " " + d.name.ko) | dump | safe }}}
+{%- endfor %}
         ]
       }
     ]
   }
 }
 </script>
-<link rel="stylesheet" href="/css/site.css">
+{% endif %}
 </head>
 <body>
 
 <header class="site">
   <div class="nav">
     <div class="brand">
-      <img class="brand-logo" src="images/logo.png" width="381" height="191" fetchpriority="high" alt="청담채 CheongDamChae 로고">
+      <img class="brand-logo" src="/images/logo.png" width="381" height="191" fetchpriority="high" alt="CheongDamChae 청담채 logo">
     </div>
     <nav class="links">
-      <a href="#signature">대표메뉴</a>
-      <a href="#more-menu">메뉴</a>
-      <a href="#sotbap">솥밥</a>
-      <a href="#space">매장</a>
-      <a href="#why">이야기</a>
-      <a href="#news">소식</a>
-      <a href="#visit">오시는 길</a>
+      <a href="#signature">{{ copy.nav.signature[lang] }}</a>
+      <a href="#more-menu">{{ copy.nav.menu[lang] }}</a>
+      <a href="#sotbap">{{ copy.nav.sotbap[lang] }}</a>
+      <a href="#space">{{ copy.nav.space[lang] }}</a>
+      <a href="#why">{{ copy.nav.why[lang] }}</a>
+      <a href="#news">{{ copy.nav.news[lang] }}</a>
+      <a href="#visit">{{ copy.nav.visit[lang] }}</a>
     </nav>
-    <a class="nav-call" href="tel:+6580805181" aria-label="청담채 예약 전화하기 8080 5181"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .7 2.9a2 2 0 0 1-.5 2.1L8 10a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.5c.9.3 1.9.6 2.9.7a2 2 0 0 1 1.7 2Z"/></svg>예약 전화하기</a>
-    <button class="burger" onclick="document.getElementById('mnav').classList.toggle('open')" aria-label="메뉴 열기">
+    <span class="lang-switch nav-lang">
+      <a href="/" class="{{ 'on' if lang == 'en' }}">EN</a>
+      <a href="/ko/" class="{{ 'on' if lang == 'ko' }}">한국어</a>
+    </span>
+    {% set sz = 15 %}
+    <a class="nav-call" href="tel:+6580805181" aria-label="{{ copy.nav.callToBook[lang] }} 8080 5181">{% include "icon-phone.njk" %}{{ copy.nav.callToBook[lang] }}</a>
+    <button class="burger" onclick="document.getElementById('mnav').classList.toggle('open')" aria-label="{{ copy.nav.openMenu[lang] }}">
       <span></span><span></span><span></span>
     </button>
   </div>
   <div class="mobile-links" id="mnav">
-    <a href="#signature">대표메뉴</a>
-    <a href="#more-menu">메뉴</a>
-    <a href="#sotbap">솥밥</a>
-    <a href="#why">이야기</a>
-    <a href="#news">소식</a>
-    <a href="#visit">오시는 길</a>
-    <a href="https://myneon.me/?m=booking&sno=1454" target="_blank" rel="noopener">온라인 예약하기</a>
-    <a href="tel:+6580805181">예약 전화하기</a>
+    <a href="#signature">{{ copy.nav.signature[lang] }}</a>
+    <a href="#more-menu">{{ copy.nav.menu[lang] }}</a>
+    <a href="#sotbap">{{ copy.nav.sotbap[lang] }}</a>
+    <a href="#why">{{ copy.nav.why[lang] }}</a>
+    <a href="#news">{{ copy.nav.news[lang] }}</a>
+    <a href="#visit">{{ copy.nav.visit[lang] }}</a>
+    <a href="{{ site.booking }}" target="_blank" rel="noopener">{{ copy.nav.bookOnline[lang] }}</a>
+    <a href="tel:+6580805181">{{ copy.nav.callToBook[lang] }}</a>
+    <a href="{{ copy.home[other] }}">{{ copy.common.switchTo[lang] }}</a>
   </div>
 </header>
 
 <section class="hero">
   <div class="ember-glow" aria-hidden="true"></div>
   <div class="wrap">
-    <div class="hero-eyebrow"><span class="dot"></span> Telok Ayer, Singapore</div>
-    <h1>냉삼, 제대로 굽다<span class="sub-en">Naengsam, done right — since day one at Telok Ayer</span></h1>
-    <p class="lede">무쇠철판 위에서 듀록 삼겹살을 4.5mm로 슬라이스해 굽는 청담채의 시그니처 냉삼. 매일 새롭게 준비하는 밑반찬과 함께, 직장인들의 인기 점심 장소!</p>
+    <div class="hero-eyebrow"><span class="dot"></span> {{ copy.hero.eyebrow }}</div>
+    <h1>{{ copy.hero.h1[lang] }}<span class="sub-en">{{ copy.hero.h1sub[lang] }}</span></h1>
+    <p class="lede">{{ copy.hero.lede[lang] }}</p>
     <div class="hero-ctas">
-      <a class="btn btn-primary" href="https://myneon.me/?m=booking&sno=1454" target="_blank" rel="noopener">예약하기</a>
-      <a class="btn btn-ghost" href="#signature">대표메뉴 보기</a>
+      <a class="btn btn-primary" href="{{ site.booking }}" target="_blank" rel="noopener">{{ copy.hero.ctaBook[lang] }}</a>
+      <a class="btn btn-ghost" href="#signature">{{ copy.hero.ctaMenu[lang] }}</a>
     </div>
+    {% set sz = 16 %}
     <div class="hero-info">
-      <div class="item">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 21s-7-6.5-7-12a7 7 0 1 1 14 0c0 5.5-7 12-7 12Z"/><circle cx="12" cy="9" r="2.4"/></svg>
-        123 Telok Ayer St, Singapore 068592
-      </div>
-      <div class="item">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.2 2"/></svg>
-        매일 11:00 – 23:30 (라스트오더 22:30)
-      </div>
-      <div class="item">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .7 2.9a2 2 0 0 1-.5 2.1L8 10a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.5c.9.3 1.9.6 2.9.7a2 2 0 0 1 1.7 2Z"/></svg>
-        8080 5181
-      </div>
+      <div class="item">{% include "icon-pin.njk" %}{{ copy.common.address }}</div>
+      <div class="item">{% include "icon-clock.njk" %}{{ copy.common.hours[lang] }}</div>
+      <div class="item">{% include "icon-phone.njk" %}{{ copy.common.phone }}</div>
     </div>
   </div>
 </section>
@@ -313,142 +179,46 @@
 <section class="section" id="signature">
   <div class="wrap">
     <div class="section-head">
-      <div class="label">대표메뉴</div>
-      <h2>Our Signature Dishes</h2>
-      <p>청담채를 대표하는 삼겹살 3종.<br>같은 고기지만 준비방식에서부터 맛의 차이가 달라집니다.</p>
+      <div class="label">{{ S.signature.label[lang] }}</div>
+      <h2>{{ S.signature.title }}</h2>
+      <p>{{ S.signature.intro[lang] | safe }}</p>
     </div>
-
-    <div class="dish">
+    {% for d in copy.signature %}
+    <div class="dish{% if d.reverse %} reverse{% endif %}">
       <div class="dish-art">
-        <img src="images/naengsam.webp" loading="lazy" decoding="async" alt="청담채 냉삼 — 무쇠 철판 위에 펼쳐 놓은 4.5mm 두께의 듀록 삼겹살" style="width:100%; height:100%; object-fit:cover;">
+        <img src="{{ d.img }}" loading="lazy" decoding="async" alt="{{ d.alt[lang] }}" style="width:100%; height:100%; object-fit:cover;">
       </div>
       <div class="dish-copy">
-        <div class="num">01</div>
-        <h3>냉삼</h3>
-        <span class="en-name">Naengsam · Frozen Pork Belly</span>
-        <p>세계적으로 인정받는 듀록 품종 삼겹살을 급속 냉동해 4.5mm 황금 두께로 슬라이스. 호일 없이 깨끗한 철판 위에서 구워, 쌈장과 상추에 싸 먹거나 남은 기름에 볶음밥으로 마무리해요.</p>
-        <span class="price-tag">1kg <span class="amt">SGD 68.80++</span></span>
-        <span class="price-tag" style="margin-left:10px;">600g <span class="amt">SGD 48.80++</span></span>
+        <div class="num">{{ d.num }}</div>
+        <h3>{{ d.name[lang] }}{% if d.nameNote %} <span class="en-name" style="display:inline; margin:0;">{{ d.nameNote[lang] }}</span>{% endif %}</h3>
+        <span class="en-name">{{ d.sub[lang] | safe }}</span>
+        <p>{{ d.desc[lang] }}</p>
+        {% for p in d.prices %}<span class="price-tag"{% if not loop.first %} style="margin-left:10px;"{% endif %}>{{ p.label[lang] }} <span class="amt">{{ p.amt }}</span></span>{% endfor %}
       </div>
     </div>
-
-    <div class="dish reverse">
-      <div class="dish-art">
-        <img src="images/jusam.webp" loading="lazy" decoding="async" alt="청담채 쭈삼(주꾸미 삼겹살)" style="width:100%; height:100%; object-fit:cover;">
-      </div>
-      <div class="dish-copy">
-        <div class="num">02</div>
-        <h3>쭈삼</h3>
-        <span class="en-name">Jusam · Spicy Baby Octopus &amp; Pork Belly</span>
-        <p>쫄깃한 주꾸미와 슬라이스 삼겹살을 매콤한 비법 소스에 버무려 볶아내는 메뉴예요. 씹을수록 은은하게 올라오는 매운맛이 계속 손이 가게 만들어요.</p>
-        <span class="price-tag">1인분 <span class="amt">SGD 48.80++</span></span>
-      </div>
-    </div>
-
-    <div class="dish">
-      <div class="dish-art">
-        <img src="images/pasam.webp" loading="lazy" decoding="async" alt="청담채 파삼(무쇠파절임삼겹살) — 무쇠 철판에 둘러 구운 삼겹살과 파절임, 팽이버섯" style="width:100%; height:100%; object-fit:cover;">
-      </div>
-      <div class="dish-copy">
-        <div class="num">03</div>
-        <h3>파삼 <span class="en-name" style="display:inline; margin:0;">(무쇠파절임삼겹살)</span></h3>
-        <span class="en-name">Cast Iron Grilled Pork Belly with Green Onion Salad</span>
-        <p>달군 무쇠판 위에서 노릇하게 구운 삼겹살에 아삭한 파절임과 팽이버섯, 부추를 곁들여 상큼하게 즐기는 메뉴예요.</p>
-        <span class="price-tag">240g <span class="amt">SGD 48.80++</span></span>
-      </div>
-    </div>
+    {% endfor %}
   </div>
 </section>
 
 <section class="section dark" id="more-menu">
   <div class="wrap">
     <div class="section-head">
-      <div class="label" style="color:var(--brass-400);">메뉴 더보기</div>
-      <h2>More From The Kitchen</h2>
-      <p>BBQ에서 반찬부터 찌개까지 든든하게 챙겨드려요.</p>
+      <div class="label" style="color:var(--brass-400);">{{ S.more.label[lang] }}</div>
+      <h2>{{ S.more.title }}</h2>
+      <p>{{ S.more.intro[lang] }}</p>
     </div>
     <div class="menu-grid">
+      {% for d in copy.more %}
       <div class="menu-cell">
         <div class="cell-photo">
-          <img src="images/kkori-gomtang.webp" alt="청담채 꼬리곰탕 — 뚝배기에 담긴 맑은 국물과 젓가락으로 집어 올린 소꼬리" loading="lazy" decoding="async">
+          <img src="{{ d.img }}" alt="{{ d.alt[lang] }}" loading="lazy" decoding="async">
         </div>
-        <h4>꼬리곰탕</h4>
-        <span class="en">Ox Tail Soup</span>
-        <p>소꼬리를 6시간 핏물 빼고 8시간 정성껏 끓여낸 진한 국물.</p>
-        <div class="price">SGD 28.80++</div>
+        <h4>{{ d.name[lang] }}</h4>
+        <span class="en">{{ d.sub[lang] }}</span>
+        <p>{{ d.desc[lang] }}</p>
+        <div class="price">{{ d.price if d.price else copy.common.ask[lang] }}</div>
       </div>
-      <div class="menu-cell">
-        <div class="cell-photo">
-          <img src="images/udae-galbitang.webp" alt="청담채 우대갈비탕 — 뚝배기에 우대갈비와 지단, 대파를 올린 맑은 갈비탕" loading="lazy" decoding="async">
-        </div>
-        <h4>우대갈비탕</h4>
-        <span class="en">Big Born Beef Soup</span>
-        <p>프리미엄 우대갈비로 맑고 깊은 육수를 낸 갈비탕.</p>
-        <div class="price">SGD 24.80++</div>
-      </div>
-      <div class="menu-cell">
-        <div class="cell-photo">
-          <img src="images/kkomak-bibimbap.webp" alt="청담채 꼬막비빔밥 — 양념 꼬막과 김, 참깨를 올린 비빔밥" loading="lazy" decoding="async">
-        </div>
-        <h4>꼬막비빔밥</h4>
-        <span class="en">Cockle Mixed Rice</span>
-        <p>싱싱한 꼬막살과 비법 양념을 더한 남도식 비빔밥.</p>
-        <div class="price">SGD 19.80++</div>
-      </div>
-      <div class="menu-cell">
-        <div class="cell-photo">
-          <img src="images/kimchi-jjigae.webp" alt="청담채 김치찌개 — 뚝배기에 묵은지와 돼지고기를 넣고 끓인 김치찌개" loading="lazy" decoding="async">
-        </div>
-        <h4>김치찌개</h4>
-        <span class="en">Kimchi Stew</span>
-        <p>잘 익은 김치로 얼큰하게 끓여낸 든든한 한 그릇.</p>
-        <div class="price">문의</div>
-      </div>
-      <div class="menu-cell">
-        <div class="cell-photo">
-          <img src="images/sundubu-jjigae.webp" alt="청담채 해물 순두부찌개 — 뚝배기에 순두부와 새우, 조개, 계란 노른자를 올린 순두부찌개" loading="lazy" decoding="async">
-        </div>
-        <h4>순두부찌개</h4>
-        <span class="en">Sundubu Stew</span>
-        <p>부드러운 순두부와 해물, 소고기 중 선택 가능.</p>
-        <div class="price">문의</div>
-      </div>
-      <div class="menu-cell">
-        <div class="cell-photo">
-          <img src="images/doenjang-jjigae.webp" alt="청담채 된장찌개 — 뚝배기에 두부, 애호박, 조개를 넣고 끓인 된장찌개" loading="lazy" decoding="async">
-        </div>
-        <h4>된장찌개</h4>
-        <span class="en">Doenjang Stew</span>
-        <p>구수한 된장으로 끓여낸 정겨운 한 그릇.</p>
-        <div class="price">문의</div>
-      </div>
-      <div class="menu-cell">
-        <div class="cell-photo">
-          <img src="images/gochujang-jjigae.webp" alt="청담채 고추장찌개 — 뚝배기에 돼지고기와 감자를 넣고 얼큰하게 끓인 고추장찌개" loading="lazy" decoding="async">
-        </div>
-        <h4>고추장찌개</h4>
-        <span class="en">Gochujang Stew</span>
-        <p>칼칼하고 매콤하게 즐기는 얼큰한 찌개.</p>
-        <div class="price">SGD 17.80</div>
-      </div>
-      <div class="menu-cell">
-        <div class="cell-photo">
-          <img src="images/korean-bakute.webp" alt="청담채 한국식 바쿠테 — 뚝배기에 돼지갈비와 대파를 듬뿍 올린 맑은 국물 요리" loading="lazy" decoding="async">
-        </div>
-        <h4>한국식 바쿠테</h4>
-        <span class="en">Korean Style Bakute</span>
-        <p>청담채만의 시그니처 퓨전 메뉴, 한국식 바쿠테. 청담채에서만 만날 수 있는 특별한 메뉴예요.</p>
-        <div class="price">SGD 21.80</div>
-      </div>
-      <div class="menu-cell">
-        <div class="cell-photo">
-          <img src="images/bukeo-haejangguk.webp" alt="청담채 콩나물 북어 해장국 — 뚝배기에 북어와 콩나물, 두부를 넣고 끓인 맑은 해장국" loading="lazy" decoding="async">
-        </div>
-        <h4>콩나물 북어 해장국</h4>
-        <span class="en">Dried Fish Clear Soup</span>
-        <p>속을 편안하게 달래주는 건강한 북어 해장국. 담백하고 든든한 정통 한식을 만나보세요.</p>
-        <div class="price">문의</div>
-      </div>
+      {% endfor %}
     </div>
   </div>
 </section>
@@ -456,65 +226,25 @@
 <section class="section" id="sotbap">
   <div class="wrap">
     <div class="section-head">
-      <div class="label">솥밥</div>
-      <h2>Hot Pot Rice</h2>
-      <p>갓 지은 밥과 누룽지를 동시에 즐길 수 있는 든든한 한 끼.</p>
+      <div class="label">{{ S.sotbap.label[lang] }}</div>
+      <h2>{{ S.sotbap.title }}</h2>
+      <p>{{ S.sotbap.intro[lang] }}</p>
     </div>
     <div class="sotbap-grid">
+      {% for d in copy.sotbap %}
       <div class="sotbap-cell">
         <div class="cell-photo art">
-          <img src="images/sotbap-galbisal.webp" alt="청담채 갈비살 솥밥 일러스트 — 솥밥 위에 구운 갈비살과 노른자, 쪽파" loading="lazy" decoding="async">
+          <img src="{{ d.img }}" alt="{{ d.alt[lang] }}" loading="lazy" decoding="async">
         </div>
-        <h4>갈비살 솥밥</h4>
-        <span class="en">Prime Rib Hot Pot Rice</span>
-        <p>부드러운 갈비살을 올린 든든한 솥밥. 청담채에서 만나는 프리미엄 한식 경험이에요.</p>
+        <h4>{{ d.name[lang] }}</h4>
+        <span class="en">{{ d.sub[lang] | safe }}</span>
+        <p>{{ d.desc[lang] }}</p>
       </div>
-      <div class="sotbap-cell">
-        <div class="cell-photo art">
-          <img src="images/sotbap-la-galbi.webp" alt="청담채 LA갈비 솥밥 일러스트 — 솥밥 위에 올린 양념 LA갈비" loading="lazy" decoding="async">
-        </div>
-        <h4>LA갈비 솥밥</h4>
-        <span class="en">LA Galbi Hot Pot Rice</span>
-        <p>달콤한 LA갈비를 올린 솥밥. 텔록아이어에서 만나는 숨은 인기 메뉴예요.</p>
-      </div>
-      <div class="sotbap-cell">
-        <div class="cell-photo art">
-          <img src="images/sotbap-jangeo.webp" alt="청담채 민물장어 솥밥 일러스트 — 솥밥 위에 올린 양념 민물장어와 쪽파, 참깨" loading="lazy" decoding="async">
-        </div>
-        <h4>민물장어 솥밥</h4>
-        <span class="en">Freshwater Eel Hot Pot Rice</span>
-        <p>영양 가득한 민물장어 솥밥. 정통 한식을 찾는 분들을 위해 정성껏 준비했어요.</p>
-      </div>
-      <div class="sotbap-cell">
-        <div class="cell-photo art">
-          <img src="images/sotbap-myeongran.webp" alt="청담채 명란 솥밥 일러스트 — 솥밥 위에 구운 명란과 노른자, 쪽파" loading="lazy" decoding="async">
-        </div>
-        <h4>명란 솥밥</h4>
-        <span class="en">Cod Roe Hot Pot Rice</span>
-        <p>감칠맛 가득한 명란을 올린 솥밥. 전통과 현대가 공존하는 청담채의 숨은 메뉴예요.</p>
-      </div>
-      <div class="sotbap-cell">
-        <div class="cell-photo art">
-          <img src="images/sotbap-samgyeop.webp" alt="청담채 삼겹구이 솥밥 일러스트 — 솥밥 위에 올린 구운 삼겹살과 쪽파, 참깨" loading="lazy" decoding="async">
-        </div>
-        <h4>삼겹구이 솥밥</h4>
-        <span class="en">Duroc Pork Belly Hot Pot Rice</span>
-        <p>듀록 품종 삼겹살을 올린 솥밥. 텔록아이어에서 만나는 진짜 한식의 맛이에요.</p>
-      </div>
-      <div class="sotbap-cell">
-        <div class="cell-photo art">
-          <img src="images/sotbap-gaji-beef.webp" alt="청담채 가지 소고기 솥밥 일러스트 — 솥밥 위에 올린 소고기와 가지, 참깨" loading="lazy" decoding="async">
-        </div>
-        <h4>가지 소고기 솥밥</h4>
-        <span class="en">Eggplant &amp; Beef Hot Pot Rice</span>
-        <p>정성껏 손으로 만든 특별한 한 그릇. 청담채가 미식가들 사이에서 사랑받는 이유예요.</p>
-      </div>
+      {% endfor %}
     </div>
     <div class="img-note">
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--ember-600)" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-        <circle cx="12" cy="12" r="9.2"/><path d="M12 11v5.5M12 7.6v.1"/>
-      </svg>
-      <span>실제 제공하는 메뉴와 달라 보일 수 있지만, 실제 메뉴를 기초로 만든 이미지임을 말씀드립니다.</span>
+      {% include "icon-info.njk" %}
+      <span>{{ copy.common.imgNote[lang] }}</span>
     </div>
   </div>
 </section>
@@ -522,20 +252,16 @@
 <section class="section dark" id="space">
   <div class="wrap">
     <div class="section-head">
-      <div class="label" style="color:var(--brass-400);">매장</div>
-      <h2>The Space</h2>
-      <p>텔록아이어 골목의 작은 한식당. 회식도, 혼밥도 편하게 오세요.</p>
+      <div class="label" style="color:var(--brass-400);">{{ S.space.label[lang] }}</div>
+      <h2>{{ S.space.title }}</h2>
+      <p>{{ S.space.intro[lang] }}</p>
     </div>
     <div class="space-grid">
-      <div class="space-slot wide">
-        <img src="images/space-storefront.webp" alt="청담채 가게 정면 — 텔록아이어 123번지 간판과 입구" loading="lazy" decoding="async">
+      {% for s in copy.space %}
+      <div class="space-slot{% if s.wide %} wide{% endif %}">
+        <img src="{{ s.img }}" alt="{{ s.alt[lang] }}" loading="lazy" decoding="async">
       </div>
-      <div class="space-slot">
-        <img src="images/space-hall.webp" alt="청담채 홀 전경 — 테이블마다 구이판과 후드가 설치된 매장 내부" loading="lazy" decoding="async">
-      </div>
-      <div class="space-slot">
-        <img src="images/space-table.webp" alt="청담채 테이블 한 상 — 구이판을 중심으로 반찬과 찌개, 고기가 차려진 상차림" loading="lazy" decoding="async">
-      </div>
+      {% endfor %}
     </div>
   </div>
 </section>
@@ -543,60 +269,17 @@
 <section class="section" id="why">
   <div class="wrap">
     <div class="section-head">
-      <div class="label">청담채 이야기</div>
-      <h2>Why CheongDamChae</h2>
+      <div class="label">{{ S.why.label[lang] }}</div>
+      <h2>{{ S.why.title }}</h2>
     </div>
     <div class="why-grid">
+      {% for w in copy.why %}
       <div class="why-item">
-        <div class="icon">
-          <svg width="42" height="42" viewBox="0 0 40 40" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <g stroke="var(--ember-500)" stroke-width="1.9" opacity="0.6">
-              <path d="M14.5 13c1.7-1.9-1.7-3.6 0-5.5s-1.7-3.6 0-5.5"/>
-              <path d="M20 13c1.7-1.9-1.7-3.6 0-5.5s-1.7-3.6 0-5.5"/>
-              <path d="M25.5 13c1.7-1.9-1.7-3.6 0-5.5s-1.7-3.6 0-5.5"/>
-            </g>
-            <path d="M10 18.5h20v9.5a5.5 5.5 0 0 1-5.5 5.5h-9A5.5 5.5 0 0 1 10 28z" fill="var(--ember-500)" fill-opacity="0.17"/>
-            <path d="M10 22.5H7a2 2 0 0 0 0 4h3M30 22.5h3a2 2 0 0 1 0 4h-3" stroke="var(--brass-400)" stroke-width="1.9"/>
-            <path d="M10 18.5v9.5a5.5 5.5 0 0 0 5.5 5.5h9a5.5 5.5 0 0 0 5.5-5.5v-9.5" stroke="var(--ember-500)" stroke-width="2.2"/>
-            <path d="M6.5 18.5h27" stroke="var(--ember-500)" stroke-width="2.2"/>
-          </svg>
-        </div>
-        <h3>8시간 정성껏 끓인 육수</h3>
-        <p>꼬리곰탕은 소꼬리를 6시간 핏물 빼고 8시간 동안 끓여내 진하고 깊은 맛을 내요. 시간이 걸려도 제대로 만드는 게 청담채의 방식이에요.</p>
+        <div class="icon">{% include "icon-" + w.icon + ".njk" %}</div>
+        <h3>{{ w.title[lang] }}</h3>
+        <p>{{ w.body[lang] }}</p>
       </div>
-      <div class="why-item">
-        <div class="icon">
-          <svg width="42" height="42" viewBox="0 0 40 40" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <circle cx="20" cy="20" r="15.6" stroke="var(--brass-400)" stroke-width="2"/>
-            <circle cx="20" cy="20" r="11.6" fill="var(--ember-500)" fill-opacity="0.15" stroke="var(--ember-500)" stroke-width="2"/>
-            <g stroke="var(--ember-500)" stroke-width="1.9">
-              <path d="M14.4 16.8c3-1.7 5.5-1.7 8.5 0"/>
-              <path d="M13.6 20.2c3.5-1.8 6.4-1.8 9.9 0"/>
-              <path d="M15 23.6c2.7-1.4 4.9-1.4 7.6 0"/>
-            </g>
-            <circle cx="25.6" cy="17.4" r="1" fill="var(--brass-400)"/>
-            <circle cx="26.2" cy="21.8" r="1" fill="var(--brass-400)"/>
-          </svg>
-        </div>
-        <h3>매일 준비하는 반찬</h3>
-        <p>작은 식당이지만 정성만큼은 크게. 밑반찬을 매일 새로 무치고 담가, 신선한 맛을 그대로 전해드려요.</p>
-      </div>
-      <div class="why-item">
-        <div class="icon">
-          <svg width="42" height="42" viewBox="0 0 40 40" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <path d="M9 11h22v6a7.5 7.5 0 0 1-7.5 7.5h-7A7.5 7.5 0 0 1 9 17z" fill="var(--ember-500)" fill-opacity="0.16"/>
-            <path d="M9 13.6H6a1.9 1.9 0 0 0 0 3.8h3M31 13.6h3a1.9 1.9 0 0 1 0 3.8h-3" stroke="var(--brass-400)" stroke-width="1.9"/>
-            <path d="M9 11v6a7.5 7.5 0 0 0 7.5 7.5h7A7.5 7.5 0 0 0 31 17v-6" stroke="var(--ember-500)" stroke-width="2.2"/>
-            <path d="M6 11h28" stroke="var(--ember-500)" stroke-width="2.2"/>
-            <path d="M11.8 14.4c1.6-1.2 3.3-1.2 4.9 0s3.3 1.2 4.9 0 3.3-1.2 4.9 0" stroke="var(--ember-500)" stroke-width="1.7" opacity="0.75"/>
-            <path d="M20 27c-1.7 2.1-3 3.1-3 4.7a3 3 0 0 0 6 0c0-1.6-1.3-2.6-3-4.7z" fill="var(--ember-500)" fill-opacity="0.3" stroke="var(--ember-500)" stroke-width="1.8"/>
-            <path d="M14.6 29c-1 1.3-1.8 1.9-1.8 2.8a1.8 1.8 0 0 0 3.6 0c0-.9-.8-1.5-1.8-2.8z" fill="var(--brass-400)" fill-opacity="0.25" stroke="var(--brass-400)" stroke-width="1.6"/>
-            <path d="M25.4 29c-1 1.3-1.8 1.9-1.8 2.8a1.8 1.8 0 0 0 3.6 0c0-.9-.8-1.5-1.8-2.8z" fill="var(--brass-400)" fill-opacity="0.25" stroke="var(--brass-400)" stroke-width="1.6"/>
-          </svg>
-        </div>
-        <h3>정성스런 찌개</h3>
-        <p>고추장찌개, 된장찌개, 순두부찌개. 뚝배기에 팔팔 끓여 그대로 상에 올려드려요. 고기 한 점에 뜨거운 국물 한 술이면 한 끼가 완성돼요.</p>
-      </div>
+      {% endfor %}
     </div>
   </div>
 </section>
@@ -605,23 +288,23 @@
 <section class="section dark" id="news">
   <div class="wrap">
     <div class="section-head">
-      <div class="label" style="color:var(--brass-400);">소식</div>
-      <h2>What's New</h2>
-      <p>새 메뉴, 재료 이야기, 매장 소식을 전해드립니다.</p>
+      <div class="label" style="color:var(--brass-400);">{{ S.news.label[lang] }}</div>
+      <h2>{{ S.news.title }}</h2>
+      <p>{{ S.news.intro[lang] }}</p>
     </div>
     <div class="home-news-grid">
       {% for post in news | limit(3) %}
-      <a class="home-news-item" href="/news/{{ post.slug }}/">
+      <a class="home-news-item" href="{{ copy.newsList[lang] }}{{ post.slug }}/">
         <div class="thumb">
-          {% if post.cover %}<img src="{{ post.cover }}" alt="{{ post.coverAlt or post.ko.title }}" loading="lazy" decoding="async">{% endif %}
+          {% if post.cover %}<img src="{{ post.cover }}" alt="{{ post.coverAlt or post[lang].title }}" loading="lazy" decoding="async">{% endif %}
         </div>
-        <time datetime="{{ post.date | dateIso }}">{{ post.date | dateKo }}</time>
-        <h3>{{ post.ko.title }}</h3>
-        <p>{{ post.ko.summary }}</p>
+        <time datetime="{{ post.date | dateIso }}">{{ post.date | dateFmt(lang) }}</time>
+        <h3>{{ post[lang].title }}</h3>
+        <p>{{ post[lang].summary }}</p>
       </a>
       {% endfor %}
     </div>
-    <a class="news-more" href="/news/">소식 전체 보기 →</a>
+    <a class="news-more" href="{{ copy.newsList[lang] }}">{{ S.news.more[lang] }}</a>
   </div>
 </section>
 {% endif %}
@@ -631,49 +314,48 @@
     <div class="visit">
       <div>
         <div class="section-head" style="margin-bottom:34px;">
-          <div class="label" style="color:var(--brass-400);">오시는 길</div>
-          <h2>Visit Us</h2>
+          <div class="label" style="color:var(--brass-400);">{{ S.visit.label[lang] }}</div>
+          <h2>{{ S.visit.title }}</h2>
         </div>
+        {% set sz = 18 %}
         <div class="visit-list">
           <div class="visit-row">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 21s-7-6.5-7-12a7 7 0 1 1 14 0c0 5.5-7 12-7 12Z"/><circle cx="12" cy="9" r="2.4"/></svg>
+            {% include "icon-pin.njk" %}
             <div>
-              <div class="label">주소</div>
-              <a class="val" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=123+Telok+Ayer+Street+Singapore+068592">123 Telok Ayer Street, Singapore 068592</a>
+              <div class="label">{{ S.visit.addressLabel[lang] }}</div>
+              <a class="val" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=123+Telok+Ayer+Street+Singapore+068592">{{ copy.common.addressFull }}</a>
             </div>
           </div>
           <div class="visit-row">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.2 2"/></svg>
+            {% include "icon-clock.njk" %}
             <div>
-              <div class="label">영업시간</div>
-              <div class="val">매일 11:00 – 23:30 (라스트오더 22:30)</div>
+              <div class="label">{{ S.visit.hoursLabel[lang] }}</div>
+              <div class="val">{{ copy.common.hours[lang] }}</div>
             </div>
           </div>
           <div class="visit-row">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .7 2.9a2 2 0 0 1-.5 2.1L8 10a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.5c.9.3 1.9.6 2.9.7a2 2 0 0 1 1.7 2Z"/></svg>
+            {% include "icon-phone.njk" %}
             <div>
-              <div class="label">전화</div>
-              <a class="val" href="tel:+6580805181">8080 5181</a>
+              <div class="label">{{ S.visit.phoneLabel[lang] }}</div>
+              <a class="val" href="tel:+6580805181">{{ copy.common.phone }}</a>
             </div>
           </div>
           <div class="visit-row">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="4"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="0.6" fill="currentColor"/></svg>
+            {% include "icon-instagram.njk" %}
             <div>
-              <div class="label">인스타그램</div>
-              <a class="val" target="_blank" rel="noopener" href="https://www.instagram.com/cheongdamchae_sg/">@cheongdamchae_sg</a>
+              <div class="label">{{ S.visit.instagramLabel[lang] }}</div>
+              <a class="val" target="_blank" rel="noopener" href="{{ site.instagram }}">@cheongdamchae_sg</a>
             </div>
           </div>
         </div>
       </div>
       <div class="map-card">
-        <h3>테이블 예약하기</h3>
-        <p>단체석부터 2인 테이블까지, 회식이나 소소한 술 한잔 모두 환영이에요. 온라인으로 바로 예약하시거나, 전화로 편하게 문의 주세요.</p>
+        <h3>{{ S.visit.bookTitle[lang] }}</h3>
+        <p>{{ S.visit.bookBody[lang] }}</p>
+        {% set sz = 17 %}
         <div style="display:flex; gap:12px; flex-wrap:wrap;">
-          <a class="btn btn-primary" href="https://myneon.me/?m=booking&sno=1454" target="_blank" rel="noopener" style="width:fit-content;">온라인 예약하기</a>
-          <a class="btn btn-ghost" href="tel:+6580805181" aria-label="청담채에 전화 문의하기 8080 5181" style="width:fit-content;">
-            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .7 2.9a2 2 0 0 1-.5 2.1L8 10a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.5c.9.3 1.9.6 2.9.7a2 2 0 0 1 1.7 2Z"/></svg>
-            전화 문의
-          </a>
+          <a class="btn btn-primary" href="{{ site.booking }}" target="_blank" rel="noopener" style="width:fit-content;">{{ copy.nav.bookOnline[lang] }}</a>
+          <a class="btn btn-ghost" href="tel:+6580805181" style="width:fit-content;">{% include "icon-phone.njk" %}{{ S.visit.callBtn[lang] }}</a>
         </div>
       </div>
     </div>
@@ -683,22 +365,23 @@
 <footer>
   <div class="wrap">
     <div style="display:flex; align-items:center; gap:14px; margin-bottom:28px;">
-      <img src="images/logo.png" width="381" height="191" loading="lazy" decoding="async" alt="청담채 CheongDamChae 로고" style="height:32px; width:auto; opacity:0.9;">
+      <img src="/images/logo.png" width="381" height="191" loading="lazy" decoding="async" alt="CheongDamChae 청담채 logo" style="height:32px; width:auto; opacity:0.9;">
     </div>
     <div class="foot-row" style="align-items:flex-start; margin-bottom:28px;">
       <div style="display:flex; flex-direction:column; gap:10px;">
-        <div>123 Telok Ayer Street, Singapore 068592</div>
-        <div>매일 11:00 – 23:30 (라스트오더 22:30)</div>
-        <a href="tel:+6580805181">8080 5181</a>
+        <div>{{ copy.common.addressFull }}</div>
+        <div>{{ copy.common.hours[lang] }}</div>
+        <a href="tel:+6580805181">{{ copy.common.phone }}</a>
       </div>
-      <div style="display:flex; gap:24px;">
-        <a target="_blank" rel="noopener" href="https://myneon.me/?m=booking&sno=1454">예약하기</a>
-        <a target="_blank" rel="noopener" href="https://www.instagram.com/cheongdamchae_sg/">Instagram</a>
-        <a target="_blank" rel="noopener" href="https://sites.google.com/view/cheongdamchae/home/our-signature-dishes">Full Menu</a>
+      <div style="display:flex; gap:24px; flex-wrap:wrap;">
+        <a target="_blank" rel="noopener" href="{{ site.booking }}">{{ copy.hero.ctaBook[lang] }}</a>
+        <a target="_blank" rel="noopener" href="{{ site.instagram }}">Instagram</a>
+        <a href="{{ copy.newsList[lang] }}">{{ copy.nav.news[lang] }}</a>
+        <a href="{{ copy.home[other] }}">{{ copy.common.switchShort[lang] }}</a>
       </div>
     </div>
     <div style="font-size:0.8rem; opacity:0.6; border-top:1px solid rgba(176,138,78,0.2); padding-top:18px;">
-      실제 제공하는 메뉴와 달라 보일 수 있지만, 실제 메뉴를 기초로 만든 이미지임을 말씀드립니다.<br>
+      {{ copy.common.imgNote[lang] }}<br>
       © 2026 CheongDamChae 청담채
     </div>
   </div>

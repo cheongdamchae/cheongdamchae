@@ -1,13 +1,13 @@
 ---
-permalink: "/en/news/"
+permalink: "/news/"
 layout: news-base.njk
 lang: en
 heading: "News"
 subheading: "New dishes, ingredient stories and what's happening at the restaurant."
 pageTitle: "News | CheongDamChae Korean BBQ, Telok Ayer Singapore"
 pageDesc: "New dishes, ingredient stories and updates from CheongDamChae, a Korean BBQ restaurant on Telok Ayer Street, Singapore."
-altKo: "/news/"
-altEn: "/en/news/"
+altKo: "/ko/news/"
+altEn: "/news/"
 ---
 <div class="news-wrap news-list">
   {% if news.length == 0 %}
@@ -17,12 +17,12 @@ altEn: "/en/news/"
   <article class="news-card">
     <div class="thumb">
       {% if post.cover %}
-        <a href="/en/news/{{ post.slug }}/"><img src="{{ post.cover }}" alt="{{ post.coverAlt or post.en.title }}" loading="lazy" decoding="async"></a>
+        <a href="/news/{{ post.slug }}/"><img src="{{ post.cover }}" alt="{{ post.coverAlt or post.en.title }}" loading="lazy" decoding="async"></a>
       {% endif %}
     </div>
     <div>
       <time datetime="{{ post.date | dateIso }}">{{ post.date | dateEn }}</time>
-      <h2><a href="/en/news/{{ post.slug }}/">{{ post.en.title }}</a>{% if not post.en.translated %}<span class="badge">KO</span>{% endif %}</h2>
+      <h2><a href="/news/{{ post.slug }}/">{{ post.en.title }}</a>{% if not post.en.translated %}<span class="badge">KO</span>{% endif %}</h2>
       <p>{{ post.en.summary }}</p>
     </div>
   </article>
