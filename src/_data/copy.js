@@ -55,8 +55,8 @@ export default {
       ko: "Naengsam, done right — since day one at Telok Ayer",
     },
     lede: {
-      en: "Duroc pork belly, sliced to 4.5mm and grilled on bare cast iron. Served with banchan we make fresh every morning — a lunchtime regular for the Telok Ayer crowd.",
-      ko: "무쇠철판 위에서 듀록 삼겹살을 4.5mm로 슬라이스해 굽는 청담채의 시그니처 냉삼. 매일 새롭게 준비하는 밑반찬과 함께, 직장인들의 인기 점심 장소!",
+      en: "Duroc pork belly, sliced to 4.5mm and grilled on bare cast iron.<br class=\"wide-only\">Served with banchan we make fresh every morning —<br class=\"wide-only\">a lunchtime regular for the Telok Ayer crowd.",
+      ko: "무쇠철판 위에서 듀록 삼겹살을 4.5mm로 슬라이스해 굽는<br class=\"wide-only\">청담채의 시그니처 냉삼.<br class=\"wide-only\">매일 새롭게 준비하는 밑반찬과 함께,<br class=\"wide-only\">직장인들의 인기 점심 장소!",
     },
     ctaBook: { en: "Reserve a table", ko: "예약하기" },
     ctaMenu: { en: "See signature dishes", ko: "대표메뉴 보기" },
@@ -71,8 +71,8 @@ export default {
     },
     phone: "8080 5181",
     imgNote: {
-      en: "Some images are illustrations based on our actual dishes, so what arrives at your table may look a little different.",
-      ko: "실제 제공하는 메뉴와 달라 보일 수 있지만, 실제 메뉴를 기초로 만든 이미지임을 말씀드립니다.",
+      en: "Some images above are illustrations drawn from our actual dishes, so what arrives at your table may look a little different.",
+      ko: "상기 사진의 메뉴 이미지는 실제와 달라 보일 수 있지만, 실제 메뉴를 기반으로 만든 이미지입니다.",
     },
     ask: { en: "Ask us", ko: "문의" },
     switchTo: { en: "한국어로 보기", ko: "View in English" },
@@ -93,7 +93,7 @@ export default {
       title: "More From The Kitchen",
       intro: {
         en: "Soups, stews and rice bowls to round out the barbecue.",
-        ko: "BBQ에서 반찬부터 찌개까지 든든하게 챙겨드려요.",
+        ko: "BBQ에서 반찬, 찌개까지 든든한 한끼를 챙겨드립니다.",
       },
     },
     sotbap: {
@@ -109,7 +109,7 @@ export default {
       title: "The Space",
       intro: {
         en: "A small Korean restaurant on a Telok Ayer side street. Come with the team, or come alone — both work here.",
-        ko: "텔록아이어 골목의 작은 한식당. 회식도, 혼밥도 편하게 오세요.",
+        ko: "텔록아이어 골목의 작은 한식당입니다. 혼밥도 회식도 편하게 오십시오.",
       },
     },
     why: {
@@ -134,8 +134,8 @@ export default {
       instagramLabel: { en: "Instagram", ko: "인스타그램" },
       bookTitle: { en: "Reserve a table", ko: "테이블 예약하기" },
       bookBody: {
-        en: "From a table for two to a room for the whole team — dinners, drinks, anything in between. Book online, or just give us a call.",
-        ko: "단체석부터 2인 테이블까지, 회식이나 소소한 술 한잔 모두 환영이에요. 온라인으로 바로 예약하시거나, 전화로 편하게 문의 주세요.",
+        en: "Whether you're eating alone, having a quiet drink, or booking for the whole team — you're welcome here. Reserve online, or just give us a call.",
+        ko: "혼밥, 혼술에서 단체 예약까지 모두 환영합니다. 온라인으로 바로 예약하시거나, 전화로 문의해 주세요.",
       },
       callBtn: { en: "Call us", ko: "전화 문의" },
     },
@@ -152,8 +152,8 @@ export default {
       name: { en: "Naengsam", ko: "냉삼" },
       sub: { en: "냉삼 · Frozen Pork Belly", ko: "Naengsam · Frozen Pork Belly" },
       desc: {
-        en: "Duroc pork belly — a breed prized worldwide — flash-frozen and sliced to a golden 4.5mm, then grilled on clean cast iron with no foil. Wrap it in lettuce with ssamjang, and finish with fried rice in the leftover fat.",
-        ko: "세계적으로 인정받는 듀록 품종 삼겹살을 급속 냉동해 4.5mm 황금 두께로 슬라이스. 호일 없이 깨끗한 철판 위에서 구워, 쌈장과 상추에 싸 먹거나 남은 기름에 볶음밥으로 마무리해요.",
+        en: "Duroc pork belly — a breed prized worldwide — flash-frozen and sliced to a golden 4.5mm. No foil: it goes straight onto the iron. Wrap it in lettuce with our own ssamjang and you'll see what the fuss is about. And it always ends with fried rice in the leftover fat. Always.",
+        ko: "세계적으로 인정받는 듀록 품종 삼겹살을 급속 냉동해 4.5mm 황금 두께로 슬라이스. 호일 없이 철판 위에 바로 구워, 청담채 쌈장과 상추에 싸 드세요. 냉삼의 놀라운 맛을 느낄 수 있습니다. 마지막은 항상 볶음밥이 진리이죠?",
       },
       prices: [
         { label: { en: "1kg", ko: "1kg" }, amt: "SGD 68.80++" },
@@ -175,7 +175,7 @@ export default {
       },
       desc: {
         en: "Springy baby octopus and sliced pork belly tossed in our own chilli sauce and stir-fried. The heat builds slowly as you chew, and keeps you reaching for more.",
-        ko: "쫄깃한 주꾸미와 슬라이스 삼겹살을 매콤한 비법 소스에 버무려 볶아내는 메뉴예요. 씹을수록 은은하게 올라오는 매운맛이 계속 손이 가게 만들어요.",
+        ko: "쫄깃한 주꾸미와 슬라이스 삼겹살을 매콤한 비법 소스에 버무려 볶아냅니다. 씹을수록 은은하게 올라오는 매운맛에 자꾸 손이 갑니다.",
       },
       prices: [{ label: { en: "Per serving", ko: "1인분" }, amt: "SGD 48.80++" }],
     },
@@ -196,8 +196,8 @@ export default {
         ko: "Cast Iron Grilled Pork Belly with Green Onion Salad",
       },
       desc: {
-        en: "Pork belly browned on a screaming-hot cast iron plate, then piled with crisp pickled spring onion, enoki mushrooms and garlic chives. Rich meat, sharp and fresh on top.",
-        ko: "달군 무쇠판 위에서 노릇하게 구운 삼겹살에 아삭한 파절임과 팽이버섯, 부추를 곁들여 상큼하게 즐기는 메뉴예요.",
+        en: "Pork belly browned on a screaming-hot cast iron plate, then piled with crisp pickled spring onion, enoki mushrooms and garlic chives. Take a piece with the chives and it tastes like a different dish altogether.",
+        ko: "달군 무쇠판 위에서 노릇하게 구운 삼겹살에 아삭한 파절임과 팽이버섯, 부추를 곁들였습니다. 부추에 곁들여 드시면 또 다른 삼겹살을 맛보실 수 있습니다.",
       },
       prices: [{ label: { en: "240g", ko: "240g" }, amt: "SGD 48.80++" }],
     },
@@ -213,8 +213,8 @@ export default {
       name: { en: "Ox Tail Soup", ko: "꼬리곰탕" },
       sub: { en: "꼬리곰탕 · Kkori Gomtang", ko: "Ox Tail Soup" },
       desc: {
-        en: "Oxtail soaked for 6 hours to draw out the blood, then simmered another 8. Deep, clean and rich.",
-        ko: "소꼬리를 6시간 핏물 빼고 8시간 정성껏 끓여낸 진한 국물.",
+        en: "Oxtail soaked for 6 hours to draw out the blood, then simmered another 8. Deep, clean and restoring — a bowl that puts you back together.",
+        ko: "소꼬리를 6시간 핏물 빼고 8시간 정성껏 끓여낸 진한 국물. 완벽한 한끼 보양식!",
       },
       price: "SGD 28.80++",
     },
@@ -227,8 +227,8 @@ export default {
       name: { en: "Big Bone Beef Soup", ko: "우대갈비탕" },
       sub: { en: "우대갈비탕 · Udae Galbitang", ko: "Big Bone Beef Soup" },
       desc: {
-        en: "Premium long-bone short rib simmered into a clear, deeply flavoured broth.",
-        ko: "프리미엄 우대갈비로 맑고 깊은 육수를 낸 갈비탕.",
+        en: "Long-bone short rib simmered for hours into a clear, deep broth, with the meat falling off the bone.",
+        ko: "긴 시간 정성 들여 우려낸 갈비의 진한 국물과 부드러운 우대갈비. 건강한 한끼를 즐기실 수 있습니다.",
       },
       price: "SGD 24.80++",
     },
@@ -255,8 +255,8 @@ export default {
       name: { en: "Kimchi Stew", ko: "김치찌개" },
       sub: { en: "김치찌개 · Kimchi Jjigae", ko: "Kimchi Stew" },
       desc: {
-        en: "Well-aged kimchi simmered into a hearty, punchy stew.",
-        ko: "잘 익은 김치로 얼큰하게 끓여낸 든든한 한 그릇.",
+        en: "Well-aged kimchi simmered into a hearty, punchy stew. Anyone can make kimchi jjigae. Ours is harder to copy than it looks.",
+        ko: "잘 익은 김치로 얼큰하게 끓여낸 든든한 한 그릇. 김치찌개, 누구나 쉽게 만들 수는 있어도 청담채의 김치찌개는 아무나 흉내 낼 수 없습니다.",
       },
       price: null,
     },
@@ -269,8 +269,8 @@ export default {
       name: { en: "Sundubu Stew", ko: "순두부찌개" },
       sub: { en: "순두부찌개 · Sundubu Jjigae", ko: "Sundubu Stew" },
       desc: {
-        en: "Silken tofu stew — choose seafood or beef.",
-        ko: "부드러운 순두부와 해물, 소고기 중 선택 가능.",
+        en: "The lunch Koreans keep coming back to. We haven't dressed it up — this is the sundubu you'd find in a small back-street place in Korea.",
+        ko: "한국인의 점심 스테디셀러, 순두부찌개. 멋을 부리지 않았습니다. 한국 골목 밥집에서 먹었던 순두부찌개 그 맛을 지향합니다.",
       },
       price: null,
     },
@@ -283,8 +283,8 @@ export default {
       name: { en: "Doenjang Stew", ko: "된장찌개" },
       sub: { en: "된장찌개 · Doenjang Jjigae", ko: "Doenjang Stew" },
       desc: {
-        en: "Soybean paste stew — savoury, homely, the everyday one.",
-        ko: "구수한 된장으로 끓여낸 정겨운 한 그릇.",
+        en: "Soybean paste stew, brought to the table still bubbling in its earthenware pot. Not an imitation of doenjang jjigae — the real thing, done properly.",
+        ko: "구수한 된장을 뚝배기에 팔팔 끓여냅니다. 흉내가 아니라 제대로 끓인 된장찌개 한 그릇, 청담채에서 즐기실 수 있습니다.",
       },
       price: null,
     },
@@ -297,8 +297,8 @@ export default {
       name: { en: "Gochujang Stew", ko: "고추장찌개" },
       sub: { en: "고추장찌개 · Gochujang Jjigae", ko: "Gochujang Stew" },
       desc: {
-        en: "Sharp, spicy chilli paste stew with a clean finish.",
-        ko: "칼칼하고 매콤하게 즐기는 얼큰한 찌개.",
+        en: "Sharp and spicy, with a clean finish. In Korea this is the stew that came out of a big pot on student trips — a bowl of the nineties, for anyone who was there.",
+        ko: "MT에 가서나 맛볼 수 있었던 90년대 그 맛. 칼칼하고 매콤한 고추장찌개 한 그릇에 그 시절이 그대로 담겨 있습니다.",
       },
       price: "SGD 17.80",
     },
@@ -312,7 +312,7 @@ export default {
       sub: { en: "한국식 바쿠테 · Hanguksik Bakute", ko: "Korean Style Bakute" },
       desc: {
         en: "Our own take on bak kut teh — pork ribs in a clear Korean-style broth. You won't find this anywhere else.",
-        ko: "청담채만의 시그니처 퓨전 메뉴, 한국식 바쿠테. 청담채에서만 만날 수 있는 특별한 메뉴예요.",
+        ko: "청담채만의 시그니처 퓨전 메뉴, 한국식 바쿠테. 청담채에서만 만나실 수 있는 특별한 메뉴입니다.",
       },
       price: "SGD 21.80",
     },
@@ -326,7 +326,7 @@ export default {
       sub: { en: "콩나물 북어 해장국 · Kongnamul Bugeo Haejangguk", ko: "Dried Fish Clear Soup" },
       desc: {
         en: "Dried pollock and bean sprouts in a clean broth — the Korean cure for the morning after.",
-        ko: "속을 편안하게 달래주는 건강한 북어 해장국. 담백하고 든든한 정통 한식을 만나보세요.",
+        ko: "속을 편안하게 달래주는 건강한 북어 해장국. 담백하고 든든한 정통 한식을 만나보십시오.",
       },
       price: null,
     },
@@ -342,8 +342,8 @@ export default {
       name: { en: "Prime Rib Hot Pot Rice", ko: "갈비살 솥밥" },
       sub: { en: "갈비살 솥밥 · Galbisal Sotbap", ko: "Prime Rib Hot Pot Rice" },
       desc: {
-        en: "Tender short rib over stone pot rice — our most generous bowl.",
-        ko: "부드러운 갈비살을 올린 든든한 솥밥. 청담채에서 만나는 프리미엄 한식 경험이에요.",
+        en: "Tender short rib, rice cooked to order, and the crisp nurungji waiting at the bottom of the pot.",
+        ko: "부드러운 갈비살 한 점에 갓 지은 밥, 그리고 바닥의 누룽지까지. 든든한 한 끼입니다.",
       },
     },
     {
@@ -356,7 +356,7 @@ export default {
       sub: { en: "LA갈비 솥밥 · LA Galbi Sotbap", ko: "LA Galbi Hot Pot Rice" },
       desc: {
         en: "Sweet marinated LA galbi over hot pot rice — a quiet favourite here.",
-        ko: "달콤한 LA갈비를 올린 솥밥. 텔록아이어에서 만나는 숨은 인기 메뉴예요.",
+        ko: "달콤한 LA갈비를 올린 솥밥. 텔록아이어에서 만나는 숨은 인기 메뉴입니다.",
       },
     },
     {
@@ -369,7 +369,7 @@ export default {
       sub: { en: "민물장어 솥밥 · Minmul Jangeo Sotbap", ko: "Freshwater Eel Hot Pot Rice" },
       desc: {
         en: "Glazed freshwater eel over rice — rich and restorative.",
-        ko: "영양 가득한 민물장어 솥밥. 정통 한식을 찾는 분들을 위해 정성껏 준비했어요.",
+        ko: "영양 가득한 민물장어 솥밥. 정통 한식을 찾는 분들을 위해 정성껏 준비했습니다.",
       },
     },
     {
@@ -382,7 +382,7 @@ export default {
       sub: { en: "명란 솥밥 · Myeongran Sotbap", ko: "Cod Roe Hot Pot Rice" },
       desc: {
         en: "Grilled cod roe over rice — deeply savoury, quietly addictive.",
-        ko: "감칠맛 가득한 명란을 올린 솥밥. 전통과 현대가 공존하는 청담채의 숨은 메뉴예요.",
+        ko: "감칠맛 가득한 명란을 올린 솥밥. 전통과 현대가 공존하는 청담채의 숨은 메뉴입니다.",
       },
     },
     {
@@ -395,7 +395,7 @@ export default {
       sub: { en: "삼겹구이 솥밥 · Samgyeop Gui Sotbap", ko: "Duroc Pork Belly Hot Pot Rice" },
       desc: {
         en: "Grilled Duroc pork belly over stone pot rice.",
-        ko: "듀록 품종 삼겹살을 올린 솥밥. 텔록아이어에서 만나는 진짜 한식의 맛이에요.",
+        ko: "듀록 품종 삼겹살을 올린 솥밥. 텔록아이어에서 만나는 진짜 한식의 맛입니다.",
       },
     },
     {
@@ -408,7 +408,7 @@ export default {
       sub: { en: "가지 소고기 솥밥 · Gaji Sogogi Sotbap", ko: "Eggplant &amp; Beef Hot Pot Rice" },
       desc: {
         en: "Braised eggplant and beef over rice — soft, savoury, and everything soaks in.",
-        ko: "정성껏 손으로 만든 특별한 한 그릇. 청담채가 미식가들 사이에서 사랑받는 이유예요.",
+        ko: "정성껏 손으로 만든 특별한 한 그릇. 청담채가 미식가들 사이에서 사랑받는 이유입니다.",
       },
     },
   ],
@@ -444,7 +444,7 @@ export default {
       title: { en: "Broth simmered for 8 hours", ko: "8시간 정성껏 끓인 육수" },
       body: {
         en: "For our ox tail soup, the oxtail soaks for 6 hours to draw out the blood, then simmers for another 8. It takes as long as it takes — that's how we do it.",
-        ko: "꼬리곰탕은 소꼬리를 6시간 핏물 빼고 8시간 동안 끓여내 진하고 깊은 맛을 내요. 시간이 걸려도 제대로 만드는 게 청담채의 방식이에요.",
+        ko: "꼬리곰탕은 소꼬리를 6시간 핏물 빼고 8시간 동안 끓여내 진하고 깊은 맛을 냅니다. 시간이 걸려도 제대로 만드는 것이 청담채의 방식입니다.",
       },
     },
     {
@@ -452,7 +452,7 @@ export default {
       title: { en: "Banchan made fresh daily", ko: "매일 준비하는 반찬" },
       body: {
         en: "Small restaurant, big effort. We season and pickle the side dishes fresh every day, so they reach you tasting the way they should.",
-        ko: "작은 식당이지만 정성만큼은 크게. 밑반찬을 매일 새로 무치고 담가, 신선한 맛을 그대로 전해드려요.",
+        ko: "작은 식당이지만 정성만큼은 크게. 밑반찬을 매일 새로 무치고 담가, 신선한 맛을 그대로 전해드립니다.",
       },
     },
     {
@@ -460,7 +460,7 @@ export default {
       title: { en: "Stews worth the pot", ko: "정성스런 찌개" },
       body: {
         en: "Gochujang, doenjang, sundubu — brought to the table still bubbling in the earthenware pot. A bite of meat and a spoon of hot broth, and the meal is complete.",
-        ko: "고추장찌개, 된장찌개, 순두부찌개. 뚝배기에 팔팔 끓여 그대로 상에 올려드려요. 고기 한 점에 뜨거운 국물 한 술이면 한 끼가 완성돼요.",
+        ko: "고추장찌개, 된장찌개, 순두부찌개. 뚝배기에 팔팔 끓여 그대로 상에 올려드립니다. 고기 한 점에 뜨거운 국물 한 술이면 한 끼가 완성됩니다.",
       },
     },
   ],

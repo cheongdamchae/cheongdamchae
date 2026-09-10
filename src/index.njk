@@ -162,7 +162,7 @@ eleventyExcludeFromCollections: true
   <div class="wrap">
     <div class="hero-eyebrow"><span class="dot"></span> {{ copy.hero.eyebrow }}</div>
     <h1>{{ copy.hero.h1[lang] }}<span class="sub-en">{{ copy.hero.h1sub[lang] }}</span></h1>
-    <p class="lede">{{ copy.hero.lede[lang] }}</p>
+    <p class="lede">{{ copy.hero.lede[lang] | safe }}</p>
     <div class="hero-ctas">
       <a class="btn btn-primary" href="{{ site.booking }}" target="_blank" rel="noopener">{{ copy.hero.ctaBook[lang] }}</a>
       <a class="btn btn-ghost" href="#signature">{{ copy.hero.ctaMenu[lang] }}</a>
@@ -216,7 +216,12 @@ eleventyExcludeFromCollections: true
         <h4>{{ d.name[lang] }}</h4>
         <span class="en">{{ d.sub[lang] }}</span>
         <p>{{ d.desc[lang] }}</p>
-        <div class="price">{{ d.price if d.price else copy.common.ask[lang] }}</div>
+        {% if d.price %}
+        <div class="price">{{ d.price }}</div>
+        {% else %}
+        {% set sz = 13 %}
+        <a class="price price-ask" href="tel:+6580805181" aria-label="{{ copy.common.ask[lang] }} 8080 5181">{% include "icon-phone.njk" %}{{ copy.common.ask[lang] }}</a>
+        {% endif %}
       </div>
       {% endfor %}
     </div>

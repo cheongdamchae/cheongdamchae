@@ -417,3 +417,25 @@
   .nav-lang{margin-right:12px;}
   .nav-lang a{padding:4px 10px; font-size:0.78rem;}
 }
+
+/* 헤더 로고와 메뉴 사이 간격 */
+.nav{gap:36px;}
+.brand{flex-shrink:0;}
+@media (max-width:1024px){
+  .nav{gap:20px;}
+  nav.links{gap:22px;}
+}
+
+/* 좁은 화면에서는 고정 줄바꿈 해제 */
+@media (max-width:860px){
+  br.wide-only{display:none;}
+}
+
+/* 가격 자리의 "문의" — 누르면 전화 연결 */
+.menu-cell .price-ask{
+  display:inline-flex; align-items:center; gap:6px;
+  color:var(--ember-glow); font-weight:500; font-size:0.95rem;
+  border-bottom:1px solid rgba(224,122,69,0.45); padding-bottom:1px;
+  transition:color .2s, border-color .2s;
+}
+.menu-cell .price-ask:hover{color:var(--cream-50); border-color:var(--cream-50);}
