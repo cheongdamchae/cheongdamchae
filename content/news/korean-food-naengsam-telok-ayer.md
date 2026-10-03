@@ -2,8 +2,8 @@
 date: 2026-10-03
 slug: korean-food-naengsam-telok-ayer
 draft: false
-cover: /images/news/naengsam-korean-frozen-pork-belly-lettuce-banchan-telok-ayer-singapore.jpg
-cover_alt: "Naengsam, Korean frozen pork belly sliced on a steel tray with lettuce and banchan at CheongDamChae, Telok Ayer, Singapore"
+cover: /images/news/cheongdamchae-koreanrestaurant_koreanfood_telokayer_singapore_naengsam.jpg
+cover_alt: "Naengsam, Korean pork belly sliced on a steel tray with lettuce and banchan at CheongDamChae, Telok Ayer, Singapore"
 ko:
   title: "텔록아이어 한식, 한국인이 조용히 찾는 냉삼(냉동삼겹살)집 청담채"
   summary: "텔록아이어 청담채는 현지 손님보다 한국인 손님이 더 많이 찾는 냉삼집입니다. 듀록 삼겹살을 4.5mm로 썰어 무쇠철판에 굽고, 1kg $68.80++입니다."
@@ -22,7 +22,7 @@ ko:
 
     고기에서 나온 기름은 철판 가장자리로 흐르고, 그 자리에 김치와 콩나물을 올려 같이 굽습니다. 이 이야기는 [냉삼 철판 — 삼겹살 기름으로 구운 김치와 콩나물](/ko/news/how-to-grill-naengsam/) 글에 따로 적었습니다.
 
-    상추에 고기 한 점과 쌈장을 올려 싸 먹고, 집밥 같은 소박한 반찬이 그릇에 따로 나옵니다.
+    상추에 고기 한 점과 쌈장을 올려 싸 먹습니다. 그리고, 항상 마무리는 볶음밥입니다.
 
     ### 싱가포르에서 한국의 맛이 그리울 때 어디로 가나
 
@@ -39,7 +39,7 @@ ko:
     청담채 · 123 Telok Ayer Street, Singapore 068592 · 매일 11:00–23:30 (라스트오더 22:30)
 en:
   title: "Telok Ayer Korean Food: The Naengsam Spot Koreans Quietly Keep Coming Back To"
-  summary: "At CheongDamChae in Telok Ayer, more of our guests are Korean than not. They come for naengsam, Korean frozen pork belly, sliced 4.5mm and grilled on cast iron. 1kg is $68.80++."
+  summary: "At CheongDamChae in Telok Ayer, more of our guests are Korean than not. They come for naengsam (pork belly), sliced 4.5mm and grilled on cast iron. 1kg is $68.80++."
   body: |-
     Looking for Korean food in Telok Ayer that Koreans actually eat? At CheongDamChae, more of our guests are Korean than not: travellers, people here on business trips, and Koreans living in Singapore who miss the taste of home.
 
@@ -47,7 +47,7 @@ en:
 
     ### What is naengsam, and why do Koreans love it?
 
-    Naengsam (Korean frozen pork belly, or naengdong samgyeopsal in full) is what neighbourhood BBQ places in Korea served back in the 1980s and 90s. The slices are thin, so they cook the moment they hit the hot iron and the edges go crisp. Fresh pork belly is everywhere in Korea now, but plenty of Koreans still go out of their way for naengsam. It tastes like the dinners they grew up with.
+    Naengsam (pork belly, short for naengdong samgyeopsal) is what neighbourhood BBQ places in Korea served back in the 1980s and 90s. The slices are thin, so they cook the moment they hit the hot iron and the edges go crisp. Fresh pork belly is everywhere in Korea now, but plenty of Koreans still go out of their way for naengsam. It tastes like the dinners they grew up with.
 
     ### What does it taste like at CheongDamChae?
 
@@ -65,7 +65,7 @@ en:
 
     ### Price
 
-    Naengsam (frozen pork belly) 1kg $68.80++ / 600g $48.80++
+    Naengsam (pork belly) 1kg $68.80++ / 600g $48.80++
 
     On the 1kg set, that's $6.88++ per 100g.
 
